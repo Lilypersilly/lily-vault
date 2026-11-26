@@ -79,9 +79,6 @@ pub fn init_theme() {
             let accent1 = get("ACCENT1", "c77dbb");
             let accent2 = get("ACCENT2", "f2a6df");
 
-            let bg_main_glass = hex_to_rgba(&bg_main, 0.72);
-            let bg_recessed_glass = hex_to_rgba(&bg_recessed, 0.58);
-            let bg_contrast_glass = hex_to_rgba(&bg_contrast, 0.68);
             let accent1_15 = hex_to_rgba(&accent1, 0.15);
             let accent1_24 = hex_to_rgba(&accent1, 0.24);
             let accent1_38 = hex_to_rgba(&accent1, 0.38);
@@ -94,9 +91,9 @@ pub fn init_theme() {
 
             let css = format!(
                 r#"
-                window.vault-window {{ background-color: {bg_main_glass}; color: #{fg_main}; }}
-                .vault-topbar {{ background-color: {bg_recessed_glass}; border-bottom: 1px solid {accent1_38}; padding: 10px 14px; }}
-                .vault-card {{ background-color: {bg_recessed_glass}; border: 1px solid {accent1_38}; border-radius: 12px; padding: 16px; }}
+                window.vault-window {{ background-color: #{bg_main}; color: #{fg_main}; }}
+                .vault-topbar {{ background-color: #{bg_recessed}; border-bottom: 1px solid {accent1_38}; padding: 10px 14px; }}
+                .vault-card {{ background-color: #{bg_recessed}; border: 1px solid {accent1_38}; border-radius: 12px; padding: 16px; }}
                 .vault-title {{ color: #{accent2}; font-family: 'Josefin Sans', sans-serif; font-size: 20px; font-weight: bold; }}
                 .vault-subtitle {{ color: #{fg_muted}; font-family: 'Josefin Sans', sans-serif; font-size: 13px; }}
                 .vault-section-hdr {{ color: #{accent2}; font-family: 'MesloLGL Nerd Font', monospace; font-size: 12px; font-weight: bold; letter-spacing: 1px; }}
@@ -105,7 +102,7 @@ pub fn init_theme() {
                 .vault-err {{ color: #f38ba8; font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: bold; }}
                 .vault-ok {{ color: #a6e3a1; font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: bold; }}
 
-                .vault-entry {{ background-color: {bg_contrast_glass}; border: 1px solid transparent; border-radius: 9px; color: #{fg_main}; font-family: 'Josefin Sans', sans-serif; padding: 7px 12px; }}
+                .vault-entry {{ background-color: #{bg_contrast}; border: 1px solid transparent; border-radius: 9px; color: #{fg_main}; font-family: 'Josefin Sans', sans-serif; padding: 7px 12px; }}
                 .vault-entry:focus {{ border-color: {accent1_55}; }}
 
                 .vault-btn {{ background-color: {fg_main_08}; border: 1px solid transparent; border-radius: 9px; padding: 7px 13px; color: #{fg_main}; font-family: 'Josefin Sans', 'MesloLGL Nerd Font', sans-serif; font-weight: bold; box-shadow: none; transition: background-color 0.15s ease; }}
